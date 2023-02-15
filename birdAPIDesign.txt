@@ -1,0 +1,8 @@
+HTTP method             Endpoint            Description
+GET                     /birds              fetch all birds
+GET                     /birds/<id>         fetch a bird by id
+GET                     /birds/type/<type>  fetch all birds by type
+POST                    /birds              creates a bird
+PUT                     /birds/<id>         updates an exsting bird by id
+PATCH                   /birds/<id>         updates an exsting bird by id
+DELETE                  /birds/<id>         delete a song by id
