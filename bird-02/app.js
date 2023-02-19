@@ -1,7 +1,6 @@
 const express = require("express");
-const { birdList, create, updateById, findById, deleteById } = require("./birds");
+const { getAll, create, updateById, findById, deleteById } = require("./birds");
 const app = express();
-
 app.use(express.json());
 
 
@@ -13,7 +12,7 @@ app.post("/birds", (req, res) => {
 })
 //get all birds route GET
 app.get("/birds", (req, res) =>{
-    res.send({message: "Succesfully found birdlist", data : birdList()}); 
+    res.send({message: "Succesfully found birdlist", data : getAll()}); 
 });
 
 //findbyID new version route GET
