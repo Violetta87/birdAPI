@@ -20,16 +20,16 @@ module.exports = {
         return birdList
     },
 
+    findById: function (id){
+        const foundBird = birdList.find(bird => bird.id ===id);
+        return foundBird;
+    },
+
     create: function (bird){
         const id = uuid.v4();
         bird.id = id;
         birdList.push(bird);
         return birdList
-    },
-
-    findById: function (id){
-        const foundBird = birdList.find(bird => bird.id ===id);
-        return foundBird;
     },
 
     updateById: function (id, name, age, type){
@@ -40,11 +40,15 @@ module.exports = {
         if(type) birdToBeUpdated.type = type;
         return birdToBeUpdated 
     },
+
+    updateByIdPut: function (id, newbird){
+        const birdToBeUpdated = birdList.find(bird => bird.id === id);
+        const upDatedBird = Object.assign(birdToBeUpdated, newbird)
+        return upDatedBird
+    },
     
     deleteById: function (id){
-
-        console.log(birdList)
-        console.log(id)
+        
         let deletedBird = birdList.findIndex(bird => bird.id === id);
         birdList.splice(deletedBird, 1);
         return deletedBird
