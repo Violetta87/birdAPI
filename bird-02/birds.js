@@ -33,18 +33,12 @@ module.exports = {
     },
 
     updateById: function (id, name, age, type){
-        const birdToBeUpdated = birdList.find(bird => bird.id ===id);
+       const birdToBeUpdated = birdList.find(bird => bird.id ===id);
 
         if(name) birdToBeUpdated.name = name;
         if(age) birdToBeUpdated.age = age;
         if(type) birdToBeUpdated.type = type;
         return birdToBeUpdated 
-    },
-
-    updateByIdPut: function (id, newbird){
-        const birdToBeUpdated = birdList.find(bird => bird.id === id);
-        const upDatedBird = Object.assign(birdToBeUpdated, newbird)
-        return upDatedBird
     },
     
     deleteById: function (id){
