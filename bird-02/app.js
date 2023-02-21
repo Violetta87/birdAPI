@@ -25,7 +25,7 @@ app.post("/birds", (req, res) => {
     
 })
 
-//update birds PATCH
+//update route PATCH
 app.patch("/birds/:id", (req, res) =>{
     //destructuring - define fields within object. 
     const { name, age, type } = req.body
